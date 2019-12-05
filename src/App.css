@@ -1,0 +1,51 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.gol-field {
+  /* flex: 1 0 80%; */
+  height: 80%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  /* width: 100%;
+  height: 100%; */
+}
+
+table, td {
+  /* border: 1px solid #555; */
+}
+
+tr {
+  width: 100%;
+  height: 16px;
+}
+
+td {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+}
+
+.gol-settings {
+  background-color: #222;
+  width: 100vw;
+  color: #EEE;
+  height: 20%;
+}
+
+.dead {
+  background-color: #000000;
+}
+
+.alive {
+  background-color: #2ECC71;
+}
