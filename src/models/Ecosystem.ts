@@ -1,5 +1,4 @@
 import Cell from './Cell';
-import { deepCopy } from '../Util';
 
 export default class Ecosystem {
     grid : Cell[][];
@@ -26,9 +25,6 @@ export default class Ecosystem {
     }
 
     toggleAlive(cell : Cell) {
-        console.log(cell)
-        console.log(this.grid)
-        console.log(this.grid[cell.y])
         let row = this.grid[cell.y]
         row[cell.x].isAlive = !cell.isAlive
     }

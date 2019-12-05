@@ -14,7 +14,7 @@ const App: React.FC = () => {
   let field = useRef<HTMLDivElement | null>(null);
   let fieldSize = useElementSize(field);
   let [appState, setAppState] = useState<AppState>(AppState.STOPPED);
-  let numOfRows = Math.floor(fieldSize.height / 24);
+  let numOfRows = Math.floor(fieldSize.height / 16);
   let numOfCols = numOfRows;
   // let numOfCols = 10;
   // let numOfRows = 10;
@@ -23,6 +23,7 @@ const App: React.FC = () => {
   useEffect(() => {
     setCellEcosystem(new Ecosystem(numOfRows, numOfCols));
     setAppState(AppState.STOPPED);
+    setGeneration(0);
   }, [numOfRows, numOfCols]);
 
   let randomize = () => {
@@ -81,8 +82,9 @@ const App: React.FC = () => {
         <button onClick={stop} disabled={appState === AppState.STOPPED}>Stop</button>
         <button onClick={randomize}>Randomize</button>
         <button onClick={toggleMassExtinction}>Mass Extinction</button>
-        <h5>Number of generations: {generation}</h5>
-        <h5>Population: {cellEcosystem.getPopulation()}</h5>
+        <h6>Ecosystem Dimensions: {numOfRows}x{numOfCols}</h6>
+        <h6>Number of generations: {generation}</h6>
+        <h6>Population: {cellEcosystem.getPopulation()}</h6>
       </div>
     </div>
   );
